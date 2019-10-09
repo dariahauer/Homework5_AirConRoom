@@ -2,6 +2,7 @@ public class Room {
     double size;
     double temperature;
     boolean airConditionin;
+    double minimalTemp;
 
     public Room(double size, double temperature, boolean airConditionin) {
         this.size = size;
@@ -9,13 +10,26 @@ public class Room {
         this.airConditionin = airConditionin;
     }
 
-    public boolean lowTemp() {
-        if (airConditionin == true && temperature > 18) {
+    public Room(double size, double temperature, boolean airConditionin, double minimalTemp) {
+        this.size = size;
+        this.temperature = temperature;
+        this.airConditionin = airConditionin;
+        this.minimalTemp = minimalTemp;
+
+
+    }
+
+    public boolean droppingTemp() {
+        if (airConditionin && temperature > minimalTemp) {
             temperature--;
             return airConditionin;
         } else {
             return airConditionin;
         }
+    }
+
+    public void showInfo() {
+        System.out.println("Room size: " + size + " m2" + " ,Temperature: " + temperature + " C " + " Have air Condition : " + airConditionin);
     }
 }
 
