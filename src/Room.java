@@ -22,10 +22,11 @@ public class Room {
     public boolean droppingTemp() {
         if (airConditionin && temperature > minimalTemp) {
             temperature--;
-            return airConditionin;
-        } else {
-            return airConditionin;
+            return true;
+        } else if (temperature<= minimalTemp){
+            return false;
         }
+        else return false;
     }
 
     public void showInfo() {
