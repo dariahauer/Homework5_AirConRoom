@@ -23,10 +23,9 @@ public class Room {
         if (airConditionin && temperature > minimalTemp) {
             temperature--;
             return true;
-        } else if (temperature<= minimalTemp){
+        } else
             return false;
-        }
-        else return false;
+
     }
 
     public void showInfo() {
