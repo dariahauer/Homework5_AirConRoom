@@ -2,7 +2,7 @@ public class Room {
     double size;
     double temperature;
     boolean airConditionin;
-    private double minimalTemp;
+    double minimalTemp;
 
     public Room(double size, double temperature, boolean airConditionin) {
         this.size = size;
@@ -10,18 +10,19 @@ public class Room {
         this.airConditionin = airConditionin;
     }
 
-    public Room(double size, double temperature, boolean airConditionin, double minimalTemp) {
-        this(size, temperature, airConditionin);
-        this.minimalTemp = minimalTemp;
+//    public Room(double size, double temperature, boolean airConditionin, double minimalTemp) {
+//        this(size, temperature, airConditionin);
+//        this.minimalTemp = minimalTemp;
 
-    }
+ //   }
 
-    public boolean droppingTemp() {
-        double minimalTemp=18;
+    public boolean droppingTemp(double  minimalTemp) {
         if (airConditionin && temperature > minimalTemp) {
             temperature--;
+            System.out.println("Changed temperature: " + temperature);
             return true;
         } else
+            System.out.println("Temperature is not changed");
             return false;
 
     }
