@@ -2,7 +2,7 @@ public class Room {
     double size;
     double temperature;
     boolean airConditionin;
-    double minimalTemp;
+    private double minimalTemp;
 
     public Room(double size, double temperature, boolean airConditionin) {
         this.size = size;
@@ -11,15 +11,13 @@ public class Room {
     }
 
     public Room(double size, double temperature, boolean airConditionin, double minimalTemp) {
-        this.size = size;
-        this.temperature = temperature;
-        this.airConditionin = airConditionin;
+        this(size, temperature, airConditionin);
         this.minimalTemp = minimalTemp;
-
 
     }
 
     public boolean droppingTemp() {
+        double minimalTemp=18;
         if (airConditionin && temperature > minimalTemp) {
             temperature--;
             return true;
