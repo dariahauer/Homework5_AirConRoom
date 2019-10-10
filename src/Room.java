@@ -2,7 +2,7 @@ public class Room {
     double size;
     double temperature;
     boolean airConditionin;
-    double minimalTemp;
+    private double minimalTemp = 18;
 
 
     public Room(double size, double temperature, boolean airConditionin) {
@@ -12,14 +12,14 @@ public class Room {
     }
 
 
-    public boolean droppingTemp(double minimalTemp) {
+    public boolean droppingTemp() {
         if (airConditionin && temperature > minimalTemp) {
             temperature--;
             System.out.println("Changed temperature: " + temperature);
             return true;
         } else
             System.out.println("Temperature is not changed");
-            return false;
+        return false;
 
     }
 
